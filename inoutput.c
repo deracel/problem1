@@ -101,8 +101,10 @@ void input(Matrix* matr, int* eof, int* m, int* n, int* nulls){
 void output(Matrix* matr){
 	for (int i = 0; i < matr->lines; i++){
 		printf("%d line: ", i+1);
-		for (int j = 0; j < matr->stroki[i].n; j++){
-			printf("%d ", matr->stroki[i].arr[j]);
+		if (matr->stroki[i].n != 0){
+				for (int j = 0; j < matr->stroki[i].n; j++){
+					printf("%d ", matr->stroki[i].arr[j]);
+				}
 		}
 		printf("\n");
 	}
