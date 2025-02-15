@@ -35,7 +35,7 @@ void createline(Matrix* matr, Matrix* newmatr, int line, Border* border, int n){
 
 
 void task(Matrix* newmatr, Matrix* matr, int* m, int* nulls, Border* border){
-    (*nulls) = 0;
+    /*(*nulls) = 0;*/
     newmatr->lines = *m - *nulls;
     int line = 0;
     newmatr->stroki = malloc ((*m - *nulls) * sizeof(Line));
@@ -61,12 +61,12 @@ void task(Matrix* newmatr, Matrix* matr, int* m, int* nulls, Border* border){
                 createline(matr, newmatr, line, border, i);
                 line++;
             }
-            if (border->pos == 0 && border->neg == 0 && (j == matr->stroki[i].n - 1)){
-                newmatr->stroki[line].arr = malloc (1 * sizeof(int));
-                newmatr->stroki[line].n = 0;
-                line++;
-                break;
-            }
+            /*if (border->pos == 0 && border->neg == 0 && (j == matr->stroki[i].n - 1)){
+                border->indexpos = -1;
+                border->indexneg = 0;
+                createline(matr, newmatr, line, border, i);
+            }*/
+            /*line++;*/
         }
     }
 }
